@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DSA Hub</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#quiz">DSA Quiz</a></li>
+                <li><a href="#carousel">Visualizations</a></li>
+                <li><a href="#weather">Break Time</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Master Data Structures & Algorithms</h1>
+                <p>Test your skills, visualize algorithms, and learn step-by-step</p>
+                <button class="cta-button">Start Learning</button>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <h2>DSA Knowledge Quiz</h2>
+                <div class="quiz-container">
+                    <div class="question-container">
+                        <h3 id="question-text">Loading question...</h3>
+                        <div class="options-container">
+                            <button class="option-btn" data-option="0"></button>
+                            <button class="option-btn" data-option="1"></button>
+                            <button class="option-btn" data-option="2"></button>
+                            <button class="option-btn" data-option="3"></button>
+                        </div>
+                    </div>
+                    <div class="quiz-info">
+                        <span id="question-counter">Question 1 of 5</span>
+                        <span id="score">Score: 0</span>
+                    </div>
+                    <div class="quiz-controls">
+                        <button id="next-btn" class="btn" disabled>Next Question</button>
+                        <button id="restart-btn" class="btn" style="display: none;">Restart Quiz</button>
+                    </div>
+                    <div id="result-container" class="result-container" style="display: none;">
+                        <h3>Quiz Complete!</h3>
+                        <p id="final-score"></p>
+                        <p id="performance-message"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization Carousel Section -->
+        <section id="carousel" class="section">
+            <div class="container">
+                <h2>Algorithm & Data Structure Visualizations</h2>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-track-container">
+                            <ul class="carousel-track">
+                                <li class="carousel-slide current-slide">
+                                    <img src="https://c8.alamy.com/comp/W3XFGY/binary-search-concept-with-random-parts-of-program-code-binary-search-with-programming-code-abstract-technology-background-of-software-developer-and-W3XFGY.jpg" alt="Binary Search Tree">
+                                    <div class="slide-info">
+                                        <h4>Binary Search Tree</h4>
+                                        <p>Efficiently store and search data using BST</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://miro.medium.com/0*vVEol7YdLLG230S-.png" alt="Graph Traversal">
+                                    <div class="slide-info">
+                                        <h4>Graph Traversal</h4>
+                                        <p>Explore BFS and DFS algorithms visually</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://files.codingninjas.in/article_images/custom-upload-1685555294-1584d5a6.webp" alt="Sorting Algorithms">
+                                    <div class="slide-info">
+                                        <h4>Sorting Algorithms</h4>
+                                        <p>Visualize bubble, merge, and quick sort</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230323191740/Heapify-Operation-in-min-heap.webp" alt="Heap Data Structure">
+                                    <div class="slide-info">
+                                        <h4>Heap</h4>
+                                        <p>Learn about max heap and min heap structures</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://www.techprofree.com/wp-content/uploads/2019/11/0-9.png" alt="Linked List">
+                                    <div class="slide-info">
+                                        <h4>Linked List</h4>
+                                        <p>Understand singly, doubly, and circular linked lists</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="carousel-btn carousel-btn--left">&lt;</button>
+                        <button class="carousel-btn carousel-btn--right">&gt;</button>
+                        <div class="carousel-nav">
+                            <button class="carousel-indicator current-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                            <button class="carousel-indicator"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Break Time / Fun Section -->
+        <section id="weather" class="section">
+            <div class="container">
+                <h2>Take a Break</h2>
+                <div class="weather-container">
+                    <div class="weather-search">
+                        <input type="text" id="city-input" placeholder="Enter city name...">
+                        <button id="search-btn" class="btn">Get Weather</button>
+                    </div>
+                    <div class="weather-display">
+                        <div id="loading" class="loading" style="display: none;">Fetching weather data...</div>
+                        <div id="weather-info" class="weather-info" style="display: none;">
+                            <div class="weather-main">
+                                <h3 id="city-name"></h3>
+                                <div class="temperature">
+                                    <span id="temp"></span>
+                                    <span class="temp-unit">°C</span>
+                                </div>
+                                <p id="weather-description"></p>
+                            </div>
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Feels like:</span>
+                                    <span id="feels-like"></span>°C
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Humidity:</span>
+                                    <span id="humidity"></span>%
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Wind:</span>
+                                    <span id="wind-speed"></span> m/s
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Pressure:</span>
+                                    <span id="pressure"></span> hPa
+                                </div>
+                            </div>
+                        </div>
+                        <div id="error-message" class="error-message" style="display: none;"></div>
+                    </div>
+                    <!-- Fun Facts -->
+                    <div class="fun-facts">
+                        <h3>DSA Fun Fact</h3>
+                        <div id="fact-container">
+                            <p id="fun-fact">Click the button below to get a random DSA fact!</p>
+                            <button id="fact-btn" class="btn">Get New Fact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DSA Learning Hub. Built with HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
